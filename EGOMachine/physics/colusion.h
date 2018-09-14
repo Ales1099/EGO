@@ -11,9 +11,9 @@ EGObool PointCircleVec2f(float * point_x, float * point_y, float * x_center_circ
 {
 	float length = sqrtf((*x_center_circle - *point_x) * (*x_center_circle - *point_x) + (*y_center_circle - *point_y)*(*y_center_circle - *point_y));
 	if (length <= *circle_radius)
-		return(TRUE);
+		return(1);
 	else
-		return(FALSE);
+		return(0);
 }
 
 //EGObool PointCircleVec3f(float point_x, float point_y, float x_center_circle, float y_center_circle, float circle_radius);
@@ -24,14 +24,14 @@ EGObool PointQuadsVec2f(float * point_x, float * point_y, float * x0, float * y0
 		return(FALSE);
 	if (*x1 > *x0)
 		if (*point_x >= *x0 && *point_x <= *x1 && *point_y >= *y0 && *point_y <= *y1)
-			return(TRUE);
+			return(1);
 		else
-			return(FALSE);
+			return(0);
 	else
 		if (*point_x >= *x1 && *point_x <= *x0 && *point_y >= *y1 && *point_y <= *y0)
-			return(TRUE);
+			return(1);
 		else
-			return(FALSE);
+			return(0);
 }
 
 //EGObool PointQuadsVec3f(float point_x, float point_y, float x0, float y0, float x1, float y1);
